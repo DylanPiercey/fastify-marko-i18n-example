@@ -1,0 +1,16 @@
+import { t } from "../i18n";
+
+class {
+  onCreate() {
+    this.state = {
+      environment: "server"
+    };
+  }
+  onMount() {
+    this.state.environment = "browser";
+  }
+}
+
+<div>
+  ${t("introDescription", { environment: state.environment })}
+</div>

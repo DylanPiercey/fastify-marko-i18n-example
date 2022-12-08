@@ -1,0 +1,34 @@
+import favicon from "./favicon.png";
+import { getScript } from "../../i18n/fastify";
+
+// Write out an inline script containing our locale data
+// out.script will merge the script content with other inline scripts from Marko.
+$ out.script(getScript());
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" sizes="32x32" href=favicon>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A basic Marko app.">
+  <title>${input.title}</title>
+</head>
+<body>
+  <${input.renderBody}/>
+</body>
+</html>
+
+style {
+  html, body {
+    font-family: system-ui;
+    padding: 0;
+    margin: 0;
+  }
+  code {
+    color: #fc0;
+  }
+  a {
+    color: #09c;
+  }
+}
